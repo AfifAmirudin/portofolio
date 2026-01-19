@@ -1,10 +1,22 @@
-
+/*
 :root {
   --bg: #0a0d14;
   --card: #111827;
   --text: #e5e7eb;
   --muted: #9ca3af;
   --accent: #38bdf8;
+}
+*/
+:root {
+  --bg: #1A1A1A;
+  --text: #F5F5F5;
+  --muted: rgba(245, 245, 245, 0.6);
+
+  --accent: #270498;
+  --accent-hover: #3B1AD9;
+
+  --card: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.08);
 }
 
 * {
@@ -29,9 +41,12 @@ main {
   padding: 80px 20px;
 }
 
+/*
+
 section {
   margin-bottom: 120px;
 }
+*/
 
 h1, h2 {
   margin-bottom: 16px;
@@ -43,8 +58,13 @@ p {
 }
 
 a {
-  color: inherit;
+  color: var(--accent);
+  transition: color 0.2s ease;
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
 }
 
 /* UTIL */
@@ -58,6 +78,20 @@ a {
   border-radius: 16px;
   overflow: hidden;
 }
+
+section {
+  margin: 80px 0;
+}
+
+.article-card,
+.vlog-card,
+.video-card,
+.graphic-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+
 
 /* VIDEO */
 .video-frame {
@@ -106,7 +140,7 @@ a {
   right: 24px;
   bottom: 24px;
   background: var(--accent);
-  color: black;
+  color: var(--text);
   padding: 10px 14px;
   border-radius: 999px;
   display: none;
@@ -127,11 +161,7 @@ a {
 .footer {
   border-top: 1px solid #1f2937;
   padding: 64px 20px 40px;
-  background: linear-gradient(
-    to top,
-    rgba(17, 24, 39, 0.9),
-    rgba(10, 13, 20, 0.9)
-  );
+  background: var(--card);
 }
 
 .footer-inner {
@@ -158,7 +188,7 @@ a {
 }
 
 .footer-socials a {
-  border: 1px solid #1f2937;
+  border: 1px solid var(--text);
   padding: 8px 14px;
   border-radius: 999px;
   font-size: 14px;
@@ -167,8 +197,8 @@ a {
 }
 
 .footer-socials a:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent-hover);
+  color: var(--accent-hover);
 }
 
 .footer-bottom {
@@ -192,6 +222,7 @@ a {
   margin-top: 32px;
 }
 
+/*
 .button {
   display: inline-flex;
   align-items: center;
@@ -205,21 +236,45 @@ a {
   color: var(--text);
   transition: all 0.25s ease;
 }
-
-.button.primary {
-  background: var(--accent);
-  color: #000;
-  border-color: var(--accent);
-}
-
 .button:hover {
   transform: translateY(-1px);
   border-color: var(--accent);
   color: #fff;
 }
+*/
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+  border-radius: 999px;
+
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background: var(--accent-hover);
+  color:#1A1A1A;
+  transform: translateY(-1px);
+}
+
+
+.button.primary {
+  background: var(--text);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 
 .button.primary:hover {
-  opacity: 0.9;
+  background: var(--accent-hover);
+  color:var(--bg);
+  transform: translateY(-1px);
 }
 
 /* Hero Profile Foto */
@@ -336,4 +391,102 @@ body::before {
     );
 
   opacity: 0.25;
+}
+
+/* GOLD DOT BLUR EFFECT */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+
+  background:
+    radial-gradient(
+      circle at 2% 5%,
+      rgba(212, 175, 55, 0.25),
+      transparent 40%
+    );
+
+  filter: blur(40px);
+}
+
+
+/* ARTICLE / VLOG SECTION */
+.article-grid {
+  display: grid;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+.article-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-subtitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* BLOG */
+.article-list {
+  display: grid;
+  gap: 16px;
+}
+
+.article-card {
+  padding: 16px;
+  border-radius: 16px;
+  background: var(--card);
+  transition: all 0.2s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-2px);
+}
+
+.article-card h4 {
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.article-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* VLOG */
+.vlog-list {
+  display: grid;
+  gap: 16px;
+}
+
+.vlog-card p {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .article-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
