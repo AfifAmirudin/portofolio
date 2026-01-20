@@ -24,11 +24,11 @@ export default function GraphicSection() {
       {/* CTA */}
       <div style={{ marginTop: 24 }}>
         <a
-          href={profile.socials.behance}
+          href={profile.socials.pinterest}
           target="_blank"
           className="button"
         >
-          View full portfolio on Behance →
+          View full portfolio on Pinterest →
         </a>
       </div>
     </section>
