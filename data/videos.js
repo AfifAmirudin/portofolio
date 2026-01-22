@@ -1,7 +1,7 @@
 export const videos = [
   {
     title: "Brand Campaign",
-    embed: "https://www.youtube.com/embed/4RnmRcuGFxg"
+    embed: "https://www.youtube.com/embed/WgVwbUUvr0c"
   },
   {
     title: "Product Teaser",
