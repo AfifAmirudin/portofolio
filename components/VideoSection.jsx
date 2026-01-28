@@ -28,11 +28,11 @@ export default function VideoSection() {
       {/* CTA */}
       <div style={{ marginTop: 24 }}>
         <a
-          href={profile.socials.youtube}
+          href={profile.socials.drive}
           target="_blank"
           className="button"
         >
-          View more on YouTube →
+          View more on Gdrive →
         </a>
       </div>
     </section>
