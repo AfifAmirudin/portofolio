@@ -14,6 +14,7 @@ export const profile = {
     linkedin: "https://linkedin.com/in/isafif",
     pinterest: "https://id.pinterest.com/adalahafif/_pins/",
     youtube: "https://www.youtube.com/@pipsmils",
-    medium: "https://medium.com/@adalahafif"
+    medium: "https://medium.com/@adalahafif",
+    drive: "https://drive.google.com/drive/folders/1-y2rFDEFSsK1zYAjzoNVjov57601--Yw?usp=sharing"
   }
 };
