@@ -18,18 +18,7 @@ export default function Footer() {
         {/* RIGHT */}
         <div>
           <div className="footer-socials">
-            <a href={profile.socials.linkedin} target="_blank">
-              LinkedIn
-            </a>
-            <a href={profile.socials.behance} target="_blank">
-              Behance
-            </a>
-            <a href={profile.socials.youtube} target="_blank">
-              YouTube
-            </a>
-            <a href={profile.socials.medium} target="_blank">
-              Medium
-            </a>
+
             <a href={profile.contact.email}>
               Email
             </a>
@@ -38,6 +27,15 @@ export default function Footer() {
               target="_blank"
             >
               WhatsApp
+            </a>
+            <a href={profile.socials.linkedin} target="_blank">
+              LinkedIn
+            </a>
+            <a href={profile.socials.youtube} target="_blank">
+              YouTube
+            </a>
+            <a href={profile.socials.medium} target="_blank">
+              Medium
             </a>
           </div>
         </div>
