@@ -11,9 +11,9 @@ export const profile = {
 
 
   socials: {
-    linkedin: "https://linkedin.com/in/username",
+    linkedin: "https://linkedin.com/in/isafif",
     pinterest: "https://id.pinterest.com/adalahafif/_pins/",
-    youtube: "https://youtube.com/@username",
-    medium: "https://medium.com/@username"
+    youtube: "https://www.youtube.com/@pipsmils",
+    medium: "https://medium.com/@adalahafif"
   }
 };
